@@ -1,5 +1,17 @@
 const heapsort = (arr) => {
   /* Your code here */
+     const heap = new Heap();
+
+     arr.forEach(item => heap.insert(item));
+ 
+     const sortedArr = [];
+   
+      while (heap.getSize()) {
+
+           sortedArr.unshift(heap.delete());
+     }
+  
+     return sortedArr;
   
 };
 
@@ -8,26 +20,39 @@ class Heap {
     this.storage = [null];
     this.size = 0;
   }
+  constructor() {
+     this.storage = [null];
+     this.size = 0;
+  }
 
   insert(val) {
     const index = this.storage.push(val) - 1;
     this.size++;
     this.bubbleUp(index);
   }
-
-  delete() {
-    if (this.storage.length === 2) {
-      this.size--;
-      return this.storage.pop();
-    } else if (this.storage.length === 1) {
-      return this.storage[0];
+  insert(val) {
+    const index = this.storage.push(val) - 1;
+    
+    this.size++;
+    this.bubbleUp(index);
     }
-    this.size--;
-    const max = this.storage[1];
-    this.storage[1] = this.storage.pop();
-    this.siftDown(1);
-    return max;
-  }
+
+
+    delete() {
+      if (this.storage.length === 2) {
+           this.size--;
+           return this.storage.pop();
+         
+     } else if (this.storage.length === 1) {
+           return this.storage[0];
+          }
+        this.size--;
+        const max = this.storage[1];
+        this.storage[1] = this.storage.pop();
+        this.siftDown(1);
+        return max;
+    }
+
 
   getMax() {
     return this.storage[1];
