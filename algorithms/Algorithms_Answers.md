@@ -2,12 +2,12 @@ Add your answers to the Algorithms exercises here.
 
 ##Excercise 1
 
-A: O(n)
+A: O(n^3)
 B: O(n)
 C: O(3n)
-D: O(Long) 
-E: O(4n)
-F: O(1)
+D: O(long) 
+E: O(n^(n^n))
+F: O(n)
 G: O(n^2)
 
 ##Excercise 2
